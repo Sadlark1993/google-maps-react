@@ -1,0 +1,2 @@
+//to install dev dependencies with yarn:
+yarn add [dependency] -D
