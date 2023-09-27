@@ -1,12 +1,13 @@
 import PropTypes from 'prop-types';
 import * as Styled from './styles';
-import { Map } from '../../components/Map';
+import { SimpleMap } from '../../components/SimpleMap';
+import { PlaceAutocompleteInput } from '../../components/PlaceAutocompleteInput';
 
 export const Home = () => {
   return (
     <Styled.compStyle>
       <div style={{ height: '100vh', width: '100%' }}>
-        <Map />
+        <PlaceAutocompleteInput />
       </div>
     </Styled.compStyle>
   );

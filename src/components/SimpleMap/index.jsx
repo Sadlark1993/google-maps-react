@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 import * as Styled from './styles';
-import { GoogleMap, useLoadScript, Marker } from '@react-google-maps/api';
+import { GoogleMap, useLoadScript, MarkerF } from '@react-google-maps/api';
 import { useMemo } from 'react';
 
-export const Map = () => {
+export const SimpleMap = () => {
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: 'AIzaSyCAsz6GgRhf9eV-yZVHTDNP5_N_3kb35Sk',
   });
@@ -14,10 +14,10 @@ export const Map = () => {
   return (
     <Styled.compStyle>
       <GoogleMap zoom={10} center={center} mapContainerClassName="map-container">
-        <Marker position={center} />
+        <MarkerF position={center} />
       </GoogleMap>
     </Styled.compStyle>
   );
 };
 
-Map.propTypes = {};
+SimpleMap.propTypes = {};
