@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 import * as Styled from './styles';
 
@@ -14,8 +14,13 @@ export const PlaceAutocompleteInput = () => {
     libraries: ['places'], //explicits the used libraries
   });
 
-  const center = useMemo(() => ({ lat: 44, lng: -80 }), []);
   const [selected, setSelected] = useState(null);
+  const center = useMemo(() => {
+    if (!selected) return { lat: 44, lng: -80 };
+    return selected;
+  }, [selected]);
+
+  useEffect(() => {}, []);
 
   if (!isLoaded) return <div>Loading...</div>;
   return (
